@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="timer.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="main"></div>
+        <div class="container">
+            <!-- <img src="mountain background.jpeg" alt=""> -->
+            <h3>super timer</h1>
+            <div class="timer">
+                <div class="card card-hours" id="displayHours">00</div>
+                <div class="two-dots">:</div>
+                <div class="card card-minutes" id="displayMinutes">00</div>
+                <div class="two-dots">:</div>
+                <div class="card card-seconds" id="displaySeconds">00</div>
+                <div class="two-dots">:</div>
+                <div class="card card-milsedonds" id="displayMiliseconds">00</div>
+            </div>
+            <div class="buttons">
+                <button id="startBtn" onclick="start()">Start</button>
+                <button id="stopBrn" onclick="stop()">Stop</button>
+                <button id="resetBtn" onclick="reset()"><span class="material-symbols-outlined">
+                    restart_alt
+                    </span></button>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        const displayHours = document.getElementById("displayHours");
+        const displayMinutes = document.getElementById("displayMinutes");
+        const displaySeconds = document.getElementById("displaySeconds");
+        const displayMiliseconds = document.getElementById("displayMiliseconds");
+    
+        let timer = null;
+        let startTime = 0;
+        let pastTime = 0;
+        let isRunning = false;
+    
+        function start() {
+            if (!isRunning) {
+                startTime = Date.now() - pastTime;
+                timer = setInterval(update, 10);
+                isRunning = true;
+            }
+        }
+    
+        function stop() {
+            if (isRunning) {
+                clearInterval(timer);
+                pastTime = Date.now() - startTime;
+                isRunning = false;
+            }
+        }
+    
+        function reset() {
+            clearInterval(timer);
+            startTime = 0;
+            pastTime = 0;
+            isRunning = false;
+    
+            displayHours.textContent = "00";
+            displayMinutes.textContent = "00";
+            displaySeconds.textContent = "00";
+            displayMiliseconds.textContent = "00";
+        }
+    
+        function update() {
+            const currentTime = Date.now();
+            pastTime = currentTime - startTime;
+            let hours = Math.floor(pastTime / (1000 * 60 * 60));
+            let minutes = Math.floor((pastTime / (1000 * 60)) % 60);
+            let seconds = Math.floor((pastTime / 1000) % 60);
+            let miliseconds = Math.floor(pastTime % 1000 / 10);
+    
+            displayHours.textContent = String(hours).padStart(2, "0");
+            displayMinutes.textContent = String(minutes).padStart(2, "0");
+            displaySeconds.textContent = String(seconds).padStart(2, "0");
+            displayMiliseconds.textContent = String(miliseconds).padStart(2, "0");
+        }
+    </script>
+</body>
+</html>

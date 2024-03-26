@@ -1,0 +1,207 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(fish.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* .container img{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+} */
+
+/* .main::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    z-index: 1;
+} */
+
+/* .container img::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+} */
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    color: white;
+}
+
+/* .container::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 30%;
+    z-index: -1;
+    filter: blur(20);
+} */
+
+h3{
+    letter-spacing: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+
+.timer{
+    display: flex;
+    font-size: 6rem;
+    font-weight: 600;
+    align-items: center;
+    /* letter-spacing: 10px; */
+}
+
+/* .buttons {
+    display: flex;
+    gap: 20px;
+} */
+
+/* .buttons button{
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+} */
+.card{
+    background-color: rgba(255, 255, 255, 0.683);
+    color: rgb(34, 47, 28);
+    box-shadow: rgba(0, 0, 0, 0.2);
+    padding: 25px 20px;
+    position: relative;
+    width: 170px;
+    text-align: center;
+}
+
+.card-hours::after{
+    content: "hours";
+    position: absolute;
+    font-size: 20px;
+    bottom: 0;
+    left: 0;
+    margin-left: 45px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 12px;
+    padding: 10px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.card-minutes::after{
+    content: "minutes";
+    position: absolute;
+    font-size: 20px;
+    bottom: 0;
+    left: 0;
+    margin-left: 33px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.card-seconds::after{
+    content: "seconds";
+    position: absolute;
+    font-size: 20px;
+    bottom: 0;
+    left: 0;
+    margin-left: 33px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.card-milsedonds::after{
+    content: "miliseconds";
+    position: absolute;
+    font-size: 20px;
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.two-dots{
+    color: white;
+    font-weight: 100;
+    font-size: 5rem;
+    margin: 0 5px;
+    margin-bottom: 10px;
+}
+
+.buttons{
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.buttons button{
+    font-size: 1.3rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.568);
+    color: white;
+    padding: 7px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    background-color: rgba(0, 0, 0, 0.371);
+}
+
+.buttons button:active{
+    background-color: rgba(0, 0, 0, 0.639);
+}
+
+/* #startBtn:hover {
+    border: 2px solid #06d6a0;
+}
+
+
+#stopBrn:hover {
+    border: 2px solid #ffd60a;
+}
+
+#resetBtn:hover{
+    border: 2px solid #ff5400; 
+} */
+/* 
+#resetBtn{
+   background-color: rgba(0, 0, 0, 0.2);
+   border: 2px solid rgba(0, 0, 0, 0.568);
+} */
