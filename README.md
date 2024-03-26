@@ -1,0 +1,2 @@
+# Sekundomer
+⏰ JavaScript sekundomer
